@@ -1,0 +1,14 @@
+<div class="col-md-9 col-xs-12">
+
+  <vaas-menu-item
+   *ngFor="let item of menu | async"
+   [menuItem]="item"
+   (add)="shoppingCart.addItem($event)">
+  </vaas-menu-item>
+
+</div>
+<div class="col-md-3 col-xs-12">
+  <!--INICIO DO CARRINHO-->
+  <vaas-shopping-cart #shoppingCart></vaas-shopping-cart>
+  <!-- FIM DO CARRINHO -->
+</div>
