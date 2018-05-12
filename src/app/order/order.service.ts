@@ -8,7 +8,7 @@ import { ShoppingCartService } from "../restaurant-detail/shopping-cart/shopping
 import { CartItem } from "../restaurant-detail/shopping-cart/cart-item.model";
 import { Order, OrderItem } from "./order.model"
 
-import { MEAT_API } from "../app.api"
+import { BRUNOMINEIRO_API } from "../app.api"
 
 @Injectable()
 export class OrderService {
@@ -43,7 +43,7 @@ export class OrderService {
   }
 
   checkOrder(order: Order): Observable<string> {
-    return this.http.post<Order>(`${MEAT_API}/orders`, order).pipe(map(order => order.id))
+    return this.http.post<Order>(`${BRUNOMINEIRO_API}/orders`, order).pipe(map(order => order.id))
   }
 
 }

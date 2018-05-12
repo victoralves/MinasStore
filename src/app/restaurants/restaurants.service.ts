@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
 import { Restaurant } from './restaurant/restaurant.model'
 import { MenuItem } from '../restaurant-detail/menu-item/menu-item.model'
 
-import { MEAT_API } from '../app.api'
+import { BRUNOMINEIRO_API } from '../app.api'
 
 @Injectable()
 export class RestaurantsService {
@@ -18,18 +18,18 @@ export class RestaurantsService {
     if(search){
       params = new HttpParams().append('q', search)
     }
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, {params: params })
+    return this.http.get<Restaurant[]>(`${BRUNOMINEIRO_API}/restaurants`, {params: params })
   }
 
   restaurantById(id: string): Observable<Restaurant>{
-    return this.http.get<Restaurant>(`${MEAT_API}/restaurants/${id}`)
+    return this.http.get<Restaurant>(`${BRUNOMINEIRO_API}/restaurants/${id}`)
   }
 
   reviewsOfRestaurant(id: string): Observable<any>{
-    return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
+    return this.http.get(`${BRUNOMINEIRO_API}/restaurants/${id}/reviews`)
   }
 
   menuOfRestaurant(id: string): Observable<MenuItem[]>{
-    return this.http.get<MenuItem[]>(`${MEAT_API}/restaurants/${id}/menu`)
+    return this.http.get<MenuItem[]>(`${BRUNOMINEIRO_API}/restaurants/${id}/menu`)
   }
 }

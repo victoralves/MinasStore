@@ -5,7 +5,7 @@ import { Router, NavigationEnd } from "@angular/router";
 import { Observable } from "rxjs";
 import { tap, filter } from "rxjs/operators";
 
-import { MEAT_API } from "../../app.api";
+import { BRUNOMINEIRO_API } from "../../app.api";
 import { User } from "./user.model";
 
 @Injectable()
@@ -25,7 +25,7 @@ export class LoginService{
   }
 
   login(email: string, password: string): Observable<User> {
-    return this.http.post<User>(`${MEAT_API}/login`, {email: email, password: password})
+    return this.http.post<User>(`${BRUNOMINEIRO_API}/login`, {email: email, password: password})
       .pipe(tap(user => this.user = user))
   }
 
