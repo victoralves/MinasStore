@@ -4,13 +4,52 @@
 
 <section class="content">
 
-  <div class="jumbotron welcome-jumbotron">
+  <!-- <div class="jumbotron welcome-jumbotron">
     <h1>Bem vindo!</h1>
     <p>
       Está com fome? Peça e receba em casa.
     </p>
     <a [routerLink]="['/restaurants']" class="btn btn-primary btn-lg">Ver Restaurantes</a>
+  </div> -->
+
+
+
+  <div class="col-md-6">
+    <div class="box box-danger">
+      <div class="box-header with-border">
+        <h3 class="box-title">Almoço fresquinho, feito no dia. Peça agora o seu!</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <img src="../../assets/img/home/almoco.jpeg" class="img-responsive img-rounded" alt="">
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer with-border">
+        <a [routerLink]="['/restaurants']" class="btn btn-danger btn-lg">Ver cardápio do dia</a>
+      </div>
+      
+    </div>
+    <!-- /.box -->
   </div>
+
+  <div class="col-md-6">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Compre nossos produtos, direto de Minas.</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <img src="../../assets/img/home/almoco.jpeg" class="img-responsive img-rounded" alt="">
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer with-border">
+        <a [routerLink]="['/restaurants']" class="btn btn-success btn-lg">Ver os produtos</a>
+      </div>  
+    </div>
+    <!-- /.box -->
+  </div>
+
+
 
 </section>
 <!-- FIM DO CONTEÚDO -->
