@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LocationStrategy, HashLocationStrategy, registerLocaleData } from "@angular/common";
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
 import locatePt from '@angular/common/locales/pt';
 
 registerLocaleData(locatePt, 'pt')
@@ -29,7 +29,11 @@ import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
 import { ApplicationErrorHandler } from './app.error-handler';
 
-
+import { AngularFireModule } from 'angularfire2';
+// import { AngularFirestoreModule } from 'angularfire2/AngularFirestoreModule';
+import { environment } from 'environments/environment';
+// import { AngularFirestore } from './angularfire2/firestore';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -53,10 +57,22 @@ import { ApplicationErrorHandler } from './app.error-handler';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule.forRoot(),
-    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt'},
               {provide: ErrorHandler, useClass: ApplicationErrorHandler}],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+// export class AppModule {
+
+//   constructor(private afs: AngularFirestore) {
+
+//     afs.app.firestore().settings({ timestampsInSnapshots: boolean(true) }
+//   }
+// }
+

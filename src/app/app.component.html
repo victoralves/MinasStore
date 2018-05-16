@@ -12,6 +12,9 @@
   </div>
 
 <vaas-snackbar></vaas-snackbar>
+<ul>
+  <li *ngFor="let task of task$ | async">{{ task.title }}</li>
+</ul>
 
   <footer class="main-footer">
     <div class="container">
@@ -22,3 +25,4 @@
     </div>
   </footer>
 </div>
+

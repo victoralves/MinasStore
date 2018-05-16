@@ -1,4 +1,8 @@
-import {Component, OnInit} from "@angular/core"
+import { Component, OnInit } from '@angular/core';
+
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+import { Task } from './models/task.model';
 
 @Component({
   selector: 'vaas-app',
@@ -6,11 +10,16 @@ import {Component, OnInit} from "@angular/core"
 })
 export class AppComponent implements OnInit {
 
-  content = 'Welcome do BrunoMineiro App!'
+  task$: Observable<Task[]>;
 
-  constructor() { }
+  content = 'Welcome do Bruno Mineiro App!'
+
+  constructor(
+    private db: AngularFirestore
+  ) { }
 
   ngOnInit() {
+    this.task$ = this.db.collection<Task>('/tasks').valueChanges();
   }
 
 }

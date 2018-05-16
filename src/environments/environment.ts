@@ -5,5 +5,13 @@
 
 export const environment = {
   production: false,
-  api: 'https://localhost:3001'
+  api: 'https://localhost:3001',
+  firebase: {
+    apiKey: 'AIzaSyDd0gcPefZNNhbPEV5C9ed3XPEPhzXhwbM',
+    authDomain: 'bruno-mineiro.firebaseapp.com',
+    databaseURL: 'https://bruno-mineiro.firebaseio.com',
+    projectId: 'bruno-mineiro',
+    storageBucket: 'bruno-mineiro.appspot.com',
+    messagingSenderId: '499213345210'
+  }
 };
